@@ -1,3 +1,5 @@
+[![Tests](https://github.com/sentryco/TextColorizer/actions/workflows/Tests.yml/badge.svg)](https://github.com/sentryco/TextColorizer/actions/workflows/Tests.yml)
+
 # TextColorizer
 
 > Apply various colors depending on character classifications
