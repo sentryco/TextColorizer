@@ -13,6 +13,46 @@
 - **Customizable Color Schemes**: Supports custom color schemes for different character types.
 - **SwiftUI Support**: Easily integrates with SwiftUI for iOS and macOS applications.
 
+
+## Usage
+
+To use the `TextColorizer` package in your Swift project, you can follow these steps to apply color schemes to different types of characters within a string:
+
+1. Import the `TextColorizer` package in your Swift file:
+   ```swift
+   import TextColorizer
+   ```
+
+2. Define a string that you want to colorize:
+   ```swift
+   let sampleText = "Hello123!"
+   ```
+
+3. Use the `attributedString` function to apply colors to the string:
+   ```swift
+   let coloredText = AttributedString.attributedString(text: sampleText)
+   ```
+
+4. Display the colored text in your SwiftUI view (if using SwiftUI):
+   ```swift
+   Text(coloredText)
+   ```
+
+Here is a complete example of a SwiftUI view that uses `TextColorizer`:
+
+```swift
+import SwiftUI
+import TextColorizer
+
+struct ContentView: View {
+    var body: some View {
+        let sampleText = "Hello123!"
+        let coloredText = AttributedString.attributedString(text: sampleText, colors: (.orange, .pink, .indigo))
+        return Text(coloredText)
+    }
+}
+```
+
 ## Installation
 
 To integrate the `TextColorizer` package into your Swift project using Swift Package Manager, you can follow these steps:
@@ -55,3 +95,4 @@ let package = Package(
 
 ### Todo: 
 - Fix the issue with light and dark colors from macOS
+
