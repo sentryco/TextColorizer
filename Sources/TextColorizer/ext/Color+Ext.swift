@@ -15,7 +15,7 @@ extension Color {
 extension Color {
    /**
     * Blue color
-    * - Fixme: ⚠️️ add some more doc
+    * - Fixme: ⚠️️ Add some more doc
     */
    fileprivate static let blueColor: Color = {
       #if os(iOS)
@@ -32,7 +32,7 @@ extension Color {
    }()
    /**
     * Green color
-    * - Fixme: ⚠️️ add some more doc
+    * - Fixme: ⚠️️ Add some more doc
     */
    fileprivate static let greenColor: Color = {
       #if os(iOS)
@@ -49,7 +49,7 @@ extension Color {
    }()
    /**
     * Red color
-    * - Fixme: ⚠️️ add some more doc
+    * - Fixme: ⚠️️ Add some more doc
     */
    fileprivate static let redColor: Color = {
       #if os(iOS)

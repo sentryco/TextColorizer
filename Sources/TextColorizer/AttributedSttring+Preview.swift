@@ -1,4 +1,5 @@
 import SwiftUI
+import HybridColor
 /**
  * Preview
  * Maybe color the char types in password view
@@ -20,13 +21,22 @@ import SwiftUI
             .frame(maxWidth: 120) // limit width to show multiline vertical text
       }
    }
-   return PreviewContainer { // Adds previewcontainer and
-      ContentView()
-         .padding(Measure.margin)
-         .background(Color.blackOrWhite)
-         #if os(macOS)
-         .padding(.horizontal)
-         #endif
+   let content = ContentView()
+      .padding(16)
+      .background(Color.blackOrWhite)
+      #if os(macOS)
+      .padding(.horizontal)
+      #endif
+   return ZStack {
+      Rectangle() // A rectangle to fill the background
+         .fill(Color.secondaryBackground) // Fills the rectangle with a secondary background color
+         .ignoresSafeArea(.all) // Ignores the safe area on all sides
+      VStack(spacing: .zero) { // A vertical stack with no spacing
+         content // The content view
+            .environment(\.colorScheme, .light) // Sets the environment to light mode
+         content // The content view again
+            .environment(\.colorScheme, .dark) // Sets the environment to dark mode
+      }
    }
    .environment(\.colorScheme, .dark) // adds darkmode
 }
