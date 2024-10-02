@@ -14,7 +14,41 @@
 - **SwiftUI Support**: Easily integrates with SwiftUI for iOS and macOS applications.
 
 ## Installation
-To integrate TextColorizer into your Xcode project using Swift Package Manager, add it as a dependency in your `Package.swift` file:
+
+To integrate the `TextColorizer` package into your Swift project using Swift Package Manager, you can follow these steps:
+
+1. Open your Xcode project.
+2. Navigate to `File` -> `Swift Packages` -> `Add Package Dependency...`.
+3. Paste the repository URL: `https://github.com/sentryco/TextColorizer.git`
+4. Choose the branch `main` to always use the latest version on the main branch.
+5. Click on `Next` and select the target where you want to use the library.
+
+Ensure that your `Package.swift` includes `TextColorizer` as a dependency:
+
+```swift
+// swift-tools-version:5.9
+import PackageDescription
+
+let package = Package(
+    name: "YourPackageName",
+    products: [
+        .library(
+            name: "YourPackageName",
+            targets: ["YourTargetName"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/sentryco/TextColorizer", branch: "main")
+    ],
+    targets: [
+        .target(
+            name: "YourTargetName",
+            dependencies: ["TextColorizer"]),
+        .testTarget(
+            name: "YourPackageNameTests",
+            dependencies: ["YourTargetName"]),
+    ]
+)
+```
 
 ### Note on Dependencies
 - **HybridColor Support**: TextColorizer utilizes the `HybridColor` package to support dynamic color schemes, including automatic adjustments for dark and light modes on macOS and iOS. This ensures that TextColorizer can seamlessly adapt to user interface style changes.
