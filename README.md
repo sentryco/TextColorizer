@@ -16,3 +16,6 @@ To integrate TextColorizer into your Xcode project using Swift Package Manager, 
 
 ### Note on Dependencies
 - **HybridColor Support**: TextColorizer utilizes the `HybridColor` package to support dynamic color schemes, including automatic adjustments for dark and light modes on macOS and iOS. This ensures that TextColorizer can seamlessly adapt to user interface style changes.
+
+### Todo: 
+- Fix the issue with light and dark colors from macOS

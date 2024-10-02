@@ -23,18 +23,18 @@ extension AttributedString {
       for character in text { // Iterates over each character in the input text
          switch character {
          case let char where char.isLetter: // Handles characters that are letters
-            // Swift.print("\(character) char.isLetter: \(character.isLetter)")
+            Swift.print("\(character) char.isLetter: \(character.isLetter)")
             var attrStr = AttributedString(String(character)) // , attributes: .init([.foregroundColor: colors.primary])
             attrStr.foregroundColor = colors.primary
             attributedString.append(attrStr)
          case let char where char.isNumber: // Handles characters that are numbers
-            // Swift.print("\(character) char.isNumber: \(character.isNumber)")
+            Swift.print("\(character) char.isNumber: \(character.isNumber)")
             var attrStr = AttributedString(String(character)) // , attributes: .init([.foregroundColor: colors.secondary])
             attrStr.foregroundColor = colors.secondary
             attributedString.append(attrStr)
          //  case let c where c.isSymbol: // - Fixme: ⚠️️ for some reason isSymbol doesnt work on symbols
          default: // symbol
-            // Swift.print("\(character) char.isSymbol: \(character.isSymbol)")
+            Swift.print("\(character) char.isSymbol: \(character.isSymbol)")
             var attrStr = AttributedString(String(character)) // , attributes: .init([.foregroundColor: colors.tertiary])
             attrStr.foregroundColor = colors.tertiary
             attributedString.append(attrStr)

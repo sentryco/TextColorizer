@@ -1,10 +1,15 @@
 import SwiftUI
+import HybridColor
 
 extension Color {
    /**
     * These colors should closely align with the descriptions given, providing a visually appealing and cohesive set of hues for various design applications.
     */
-   public static let defaultColorScheme: AttributedString.Colors = (blueColor, greenColor, redColor)
+   public static let defaultColorScheme: AttributedString.Colors = (
+      primary: blueColor,
+      secondary: greenColor,
+      tertiary: redColor
+   )
    // let blue: Color = .init(light: Color.blue/*.darker()*/, dark: Color.blue/*.lighter()*/)
    // let red: Color = .init(light: Color.red/*.darker()*/, dark: Color.red/*.lighter()*/)
    // let green: Color = .init(light: Color.green/*.darker()*/, dark: Color.green/*.lighter()*/)
@@ -24,10 +29,11 @@ extension Color {
          dark: .init(uiColor: UIColor.systemBlue.lighter(amount: 0.4))
       )
       #elseif os(macOS)
-      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
-         light: .init(nsColor: NSColor.systemBlue.darker(amount: 0.1)),
-         dark: .init(nsColor: NSColor.systemBlue.lighter(amount: 0.4))
-      )
+      Color.blue
+//      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
+//         light: .init(nsColor: NSColor.blue.darker(amount: 0.1)),
+//         dark: .init(nsColor: NSColor.blue.lighter(amount: 0.4))
+//      )
       #endif
    }()
    /**
@@ -41,10 +47,11 @@ extension Color {
          dark: .init(uiColor: UIColor.systemGreen.lighter(amount: 0.4))
       )
       #elseif os(macOS)
-      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
-         light: .init(nsColor: NSColor.systemGreen.darker(amount: 0.1)),
-         dark: .init(nsColor: NSColor.systemGreen.lighter(amount: 0.4))
-      )
+      Color.green
+//      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
+//         light: .init(nsColor: NSColor.green.darker(amount: 0.1)),
+//         dark: .init(nsColor: NSColor.green.lighter(amount: 0.4))
+//      )
       #endif
    }()
    /**
@@ -58,10 +65,11 @@ extension Color {
          dark: .init(uiColor: UIColor.systemRed.lighter(amount: 0.1))
       )
       #elseif os(macOS)
-      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
-         light: .init(nsColor: NSColor.systemRed.darker(amount: 0.4)),
-         dark: .init(nsColor: NSColor.systemRed.lighter(amount: 0.1))
-      )
+      Color.red
+//      .init( // - Fixme: ⚠️️ for some reason Color.blue crashes, so use Color(uiColor: .systemBlue)
+//         light: .init(nsColor: NSColor.red.darker(amount: 0.4)),
+//         dark: .init(nsColor: NSColor.red.lighter(amount: 0.1))
+//      )
       #endif
    }()
 }
