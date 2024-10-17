@@ -8,9 +8,21 @@ import HybridColor
  */
 extension AttributedString {
    /**
-    * - Description: This function takes a string and applies a distinct color to each character based on whether it's a letter, number, or symbol. Letters are colored with the primary color, numbers with the secondary color, and symbols with the tertiary color. The result is an AttributedString where the text is visually categorized by character type, enhancing readability and aesthetic appeal.
-    * - Important: ⚠️️ Trying to refactor this with AttributeContainer([.foregroundColor: colors.primary] etc, doesnt seem to work. The color isnt added. Ther emight be some other way of doing it, might be worth looking into later
-    * - Note: We use the  ranges(of:)  method to get the ranges of letters, numbers, and symbols in the  text . We then iterate over these ranges and apply the desired foreground color to each range using the subscript syntax  attributedString[range].foregroundColor .
+    * - Description: This function takes a string and applies a distinct color to
+    *                each character based on whether it's a letter, number, or symbol.
+    *                Letters are colored with the primary color, numbers with the
+    *                secondary color, and symbols with the tertiary color. The
+    *                result is an AttributedString where the text is visually
+    *                categorized by character type, enhancing readability and
+    *                aesthetic appeal.
+    * - Important: ⚠️️ Trying to refactor this with AttributeContainer(
+    *                [.foregroundColor: colors.primary] etc, doesnt seem to work.
+    *                The color isnt added. Ther emight be some other way of doing
+    *                it, might be worth looking into later
+    * - Note: We use the  ranges(of:)  method to get the ranges of letters,
+    *                numbers, and symbols in the  text . We then iterate over
+    *                these ranges and apply the desired foreground color to each
+    *                range using the subscript syntax  attributedString[range].foregroundColor .
     * - Note: Alt name: `colorizedAttrStr`
     * - Fixme: ⚠️️ One easy way to simplify all this is to store color and char in a tuple. and apply it later. ask copilot to write up the code etc
     * - Parameters:

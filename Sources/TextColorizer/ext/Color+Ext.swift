@@ -3,7 +3,9 @@ import HybridColor
 
 extension Color {
    /**
-    * These colors should closely align with the descriptions given, providing a visually appealing and cohesive set of hues for various design applications.
+    * - Description: These colors should closely align with the descriptions
+    *                given, providing a visually appealing and cohesive set of
+    *                hues for various design applications.
     */
    public static let defaultColorScheme: AttributedString.Colors = (
       primary: blueColor,

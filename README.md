@@ -13,7 +13,6 @@
 - **Customizable Color Schemes**: Supports custom color schemes for different character types.
 - **SwiftUI Support**: Easily integrates with SwiftUI for iOS and macOS applications.
 
-
 ## Usage
 
 To use the `TextColorizer` package in your Swift project, you can follow these steps to apply color schemes to different types of characters within a string:
@@ -95,4 +94,4 @@ let package = Package(
 
 ### Todo: 
 - Fix the issue with light and dark colors from macOS
-
+- Remove tests?
