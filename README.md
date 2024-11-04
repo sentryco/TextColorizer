@@ -1,4 +1,5 @@
 [![Tests](https://github.com/sentryco/TextColorizer/actions/workflows/Tests.yml/badge.svg)](https://github.com/sentryco/TextColorizer/actions/workflows/Tests.yml)
+[![codebeat badge](https://codebeat.co/badges/cd6852ac-d052-4981-ae79-e9c0e2986248)](https://codebeat.co/projects/github-com-sentryco-textcolorizer-main)
 
 # TextColorizer
 
