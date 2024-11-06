@@ -4,13 +4,13 @@ import PackageDescription
 let package = Package(
     name: "TextColorizer",
     platforms: [
-        .macOS(.v14), 
+        .macOS(.v14),
         .iOS(.v17)
     ],
     products: [
         .library(
             name: "TextColorizer",
-            targets: ["TextColorizer"]),
+            targets: ["TextColorizer"])
     ],
     dependencies: [
         // Use the latest commit on the 'main' branch
@@ -22,6 +22,6 @@ let package = Package(
             dependencies: ["HybridColor"]), // Ensure HybridColor is added as a dependency
         .testTarget(
             name: "TextColorizerTests",
-            dependencies: ["TextColorizer"]),
+            dependencies: ["TextColorizer"])
     ]
 )
