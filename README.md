@@ -47,7 +47,12 @@ import TextColorizer
 struct ContentView: View {
     var body: some View {
         let sampleText = "Hello123!"
-        let coloredText = AttributedString.attributedString(text: sampleText, colors: (.orange, .pink, .indigo))
+        let customColors: AttributedString.Colors = (
+            primary: .orange,
+            secondary: .pink,
+            tertiary: .indigo
+        )
+        let coloredText = AttributedString.attributedString(text: sampleText, colors: customColors)
         return Text(coloredText)
     }
 }
@@ -96,3 +101,35 @@ let package = Package(
 ### Todo: 
 - Fix the issue with light and dark colors from macOS
 - Remove tests?
+- Optimize AttributedString Extension
+File: Sources/TextColorizer/AttributedString+Ext.swift
+Issue: Iterating over each character may not be efficient for large texts.
+Solution: Use regular expressions to apply attributes to ranges of text more efficiently.
+
+```swift
+   public static func attributedString(text: String, colors: Colors = defaultColors) -> AttributedString {
+       var attributedString = AttributedString(text)
+       let nsText = NSString(string: text)
+
+       // Apply primary color to letters
+       applyColor(using: "[A-Za-z]", in: nsText, attributedString: &attributedString, color: colors.primary)
+
+       // Apply secondary color to numbers
+       applyColor(using: "\\d", in: nsText, attributedString: &attributedString, color: colors.secondary)
+
+       // Apply tertiary color to symbols
+       applyColor(using: "[^A-Za-z\\d]", in: nsText, attributedString: &attributedString, color: colors.tertiary)
+
+       return attributedString
+   }
+
+   private static func applyColor(using pattern: String, in nsText: NSString, attributedString: inout AttributedString, color: Color) {
+       let regex = try! NSRegularExpression(pattern: pattern, options: [])
+       let matches = regex.matches(in: nsText as String, options: [], range: NSRange(location: 0, length: nsText.length))
+       for match in matches {
+           if let range = Range(match.range, in: attributedString.characters) {
+               attributedString[range].foregroundColor = color
+           }
+       }
+   }
+```
